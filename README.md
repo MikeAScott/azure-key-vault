@@ -9,6 +9,9 @@ Ruby wrapper for Azure Key Vault REST API
 ### Get an access token
 `bearer_token = KeyVault::Auth.new(tenant_id, client_id, client_secret).bearer_token`
 
+### Get an access token using Managed Identity
+`bearer_token = KeyVault::ManagedIdentityAuth.new().bearer_token`
+
 ### Get client for and existing Azure Key Vault
 `vault = KeyVault::Client.new(vault_name, bearer_token)`
 
