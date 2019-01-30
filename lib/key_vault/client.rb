@@ -21,10 +21,10 @@ module KeyVault
     # +vault_name+:: The name of the key vault
     # +bearer_token+:: The token obtained from #KeyVault::Auth
     # +api_version+:: (*optional*) Version of the azure REST API to use.
-    #                 Defaults to +DEFAULT_API_VERSION+
-    def initialize(vault_name, bearer_token, api_version: DEFAULT_API_VERSION)
+    #                 Defaults to +VAULT_API_VERSION+
+    def initialize(vault_name, bearer_token, api_version: VAULT_API_VERSION)
       @vault_name = vault_name
-      @api_version = api_version || DEFAULT_API_VERSION
+      @api_version = api_version || VAULT_API_VERSION
       @bearer_token = bearer_token
       @vault_url = Url.new(@vault_name)
     end

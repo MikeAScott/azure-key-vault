@@ -12,7 +12,7 @@ describe KeyVault::Client do
 
     it 'defaults api_version' do
       client = KeyVault::Client.new(vault_name, bearer_token)
-      expect(client.api_version).to eq KeyVault::DEFAULT_API_VERSION
+      expect(client.api_version).to eq KeyVault::VAULT_API_VERSION
     end
 
     it 'allows setting of api_version' do
@@ -25,7 +25,7 @@ describe KeyVault::Client do
   describe '.get_secret' do
     let(:secret_name) { 'the-secret' }
     let(:secret_value) { 'top secret' }
-    let(:api_version) { KeyVault::DEFAULT_API_VERSION }
+    let(:api_version) { KeyVault::VAULT_API_VERSION }
     let(:secret_url) { "https://#{vault_name}.vault.azure.net/secrets/#{secret_name}?api-version=#{api_version}" }
     let(:valid_response) do
       <<-RESPONSE
