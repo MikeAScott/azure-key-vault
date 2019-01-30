@@ -36,7 +36,7 @@ module KeyVault
     end
 
     def url
-      "https://http://169.254.169.254/metadata/identity/oauth2/token?api-version=#{@api_version}&resource=https://vault.azure.net/"
+      "http://169.254.169.254/metadata/identity/oauth2/token?api-version=#{@api_version}&resource=https://vault.azure.net/"
     end
   end
 end

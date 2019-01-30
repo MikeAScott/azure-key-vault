@@ -10,7 +10,7 @@ describe KeyVault::ManagedIdentityAuth do
 
   describe '.bearer_token' do
     subject(:auth) { KeyVault::ManagedIdentityAuth.new() }
-    let(:auth_url) { "https://http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-04-02&resource=https://vault.azure.net/" }
+    let(:auth_url) { "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-04-02&resource=https://vault.azure.net/" }
     let(:access_token) { 'theaccesstoken' }
     let(:auth_response) { %Q[{
       "token_type":"Bearer",
